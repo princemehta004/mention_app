@@ -1,0 +1,17 @@
+.mentionable-input {
+  padding: 10px;
+  border: 1px solid #e3e3e3;
+}
+.centered {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+.width_70 {
+  width: 70%;
+}
+.border_grey {
+  border: 1px solid #e3e3e3;
+}
