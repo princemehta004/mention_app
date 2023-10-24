@@ -4,9 +4,9 @@ import usersData from "./users.json";
 interface User {
   users: string[];
 }
-const MentionComponent = () => {
+const MentionComponent = ({ onChange, value = "" }) => {
   const users = usersData.users;
-  const [inputValue, setInputValue] = useState<string>("");
+  const [inputValue, setInputValue] = useState<string>(value);
   const [mentionList, setMentionList] = useState<string[]>([]);
   const [showMentionList, setShowMentionList] = useState<boolean>(false);
 
@@ -44,7 +44,10 @@ const MentionComponent = () => {
       <textarea
         value={inputValue}
         placeholder="Type a message..."
-        onChange={handleInputChange}
+        onChange={(e) => {
+          if (onChange) onChange(e);
+          else handleInputChange(e);
+        }}
         className="  border_grey"
       />
       {showMentionList && (
